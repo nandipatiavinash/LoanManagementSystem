@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lendwise.controller.LoanController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-background-color: #2D2F31; -fx-padding: 15;">
+            <Button text="← Back" onAction="#backToDashboard"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white;"/>
+            <Label text="Loans"
+                   style="-fx-font-size: 22px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER AREA -->
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;">
+
+            <Button text="Create Loan"
+                    onAction="#onCreateLoan"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="tblLoans" prefWidth="800">
+                <columns>
+                    <TableColumn fx:id="colLoanId" text="Loan ID" prefWidth="150"/>
+                    <TableColumn fx:id="colCustomer" text="Customer" prefWidth="150"/>
+                    <TableColumn fx:id="colType" text="Loan Type" prefWidth="100"/>
+                    <TableColumn fx:id="colPrincipal" text="Principal" prefWidth="120"/>
+                    <TableColumn fx:id="colTenure" text="Tenure (Months)" prefWidth="130"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

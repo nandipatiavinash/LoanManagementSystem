@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lendwise.controller.CustomerController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-background-color: #2D2F31; -fx-padding: 15;">
+            <Button text="← Back" onAction="#backToDashboard"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white;"/>
+            <Label text="Customers"
+                   style="-fx-font-size: 22px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER TABLE -->
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;">
+            <Button text="Add Customer"
+                    onAction="#onAddCustomer"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="tblCustomers" prefWidth="800">
+                <columns>
+
+                    <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+                    <TableColumn fx:id="colAge" text="Age" prefWidth="80"/>
+                    <TableColumn fx:id="colIncome" text="Monthly Income" prefWidth="150"/>
+                    <TableColumn fx:id="colCreditScore" text="Credit Score" prefWidth="120"/>
+                    <TableColumn fx:id="colContact" text="Contact" prefWidth="150"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

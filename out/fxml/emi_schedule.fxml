@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lendwise.controller.EmiController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-background-color: #2D2F31; -fx-padding: 15;">
+            <Button text="← Back" onAction="#backToLoans"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white;"/>
+            <Label text="EMI Schedule"
+                   style="-fx-font-size: 22px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER -->
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;">
+
+            <Label fx:id="lblLoanInfo"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="tblEmi" prefWidth="820">
+                <columns>
+
+                    <TableColumn fx:id="colInstallment" text="Installment #" prefWidth="120"/>
+                    <TableColumn fx:id="colDueDate" text="Due Date" prefWidth="150"/>
+                    <TableColumn fx:id="colPrincipal" text="Principal" prefWidth="150"/>
+                    <TableColumn fx:id="colInterest" text="Interest" prefWidth="150"/>
+                    <TableColumn fx:id="colTotal" text="Total EMI" prefWidth="150"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+
+                </columns>
+            </TableView>
+
+            <Button text="Pay Selected EMI"
+                    onAction="#onPayEmi"
+                    style="-fx-background-color: #2DBB55; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

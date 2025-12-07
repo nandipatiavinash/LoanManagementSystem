@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lendwise.controller.DashboardController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- ===================== TOP BAR ===================== -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-background-color: #2D2F31; -fx-padding: 15;">
+            
+            <Label text="LendWise Loan Management System"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <!-- FIXED: Correct HBox grow syntax -->
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <Button text="Customers" onAction="#onCustomersClicked"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+            <Button text="Loans" onAction="#onLoansClicked"
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- ===================== CENTER CARDS ===================== -->
+    <center>
+        <VBox spacing="40" alignment="CENTER" style="-fx-padding: 40;">
+            
+            <Label text="Dashboard Summary"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+            <HBox spacing="40" alignment="CENTER">
+
+                <!-- CARD 1: TOTAL CUSTOMERS -->
+                <VBox alignment="CENTER" spacing="10"
+                      style="-fx-padding: 20; -fx-background-color: #F0F3F5;
+                             -fx-border-color: #D0D3D6; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #999, 8, 0, 0, 2);">
+                    
+                    <Label text="Total Customers"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    
+                    <Label fx:id="lblTotalCustomers" text="0"
+                           style="-fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: #3457D5;"/>
+                </VBox>
+
+                <!-- CARD 2: ACTIVE LOANS -->
+                <VBox alignment="CENTER" spacing="10"
+                      style="-fx-padding: 20; -fx-background-color: #F0F3F5;
+                             -fx-border-color: #D0D3D6; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #999, 8, 0, 0, 2);">
+
+                    <Label text="Active Loans"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    
+                    <Label fx:id="lblActiveLoans" text="0"
+                           style="-fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: #1E8F4C;"/>
+                </VBox>
+
+                <!-- CARD 3: OVERDUE EMIs -->
+                <VBox alignment="CENTER" spacing="10"
+                      style="-fx-padding: 20; -fx-background-color: #F0F3F5;
+                             -fx-border-color: #D0D3D6; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #999, 8, 0, 0, 2);">
+
+                    <Label text="Overdue EMIs"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    
+                    <Label fx:id="lblOverdueEmis" text="0"
+                           style="-fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: #D52222;"/>
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

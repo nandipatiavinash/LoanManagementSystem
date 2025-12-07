@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lendwise.controller.CreateLoanController"
+      spacing="15" alignment="CENTER"
+      style="-fx-padding: 20; -fx-background-color: #F5F7FA;">
+
+    <Label text="Create New Loan"
+           style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Select Customer:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbCustomer" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Loan Type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbLoanType" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Interest Type:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbInterestType" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Principal Amount:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPrincipal" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Tenure (Months):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTenure" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Monthly EMI:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label fx:id="lblEmi" text="-" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Calculate EMI" onAction="#onCalculateEmi"
+            style="-fx-background-color: #3457D5; -fx-text-fill: white;"/>
+
+    <Button text="Save Loan" onAction="#onSaveLoan"
+            style="-fx-background-color: #2DBB55; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+</VBox>
